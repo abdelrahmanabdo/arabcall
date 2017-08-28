@@ -84,6 +84,9 @@ if(this.profileimg) {
     this.imagePicker.getPictures({maximumImagesCount : 1}).then((results) => {
   for (var i = 0; i < results.length; i++) {
       console.log('Image URI: ' + results[i]);
+      this.profileimg = results[i] ; 
+       this.picon = true ; 
+   this.pimg = false ;
   }
 }, (err) => { });
 //      photos.requestAuthorization().then(() => {

@@ -84,31 +84,46 @@ export class DatabaseProvider {
 var storageRef = firebase.storage().ref();
 
 // Create a reference to 'mountains.jpg'
-var mountainsRef = storageRef.child('mountains.png');
 
-// Create a reference to 'images/mountains.jpg'
-// var mountainImagesRef = storageRef.child('images/mountains.jpg');
 
-// While the file names are the same, the references point to different files
-// mountainsRef.name === mountainImagesRef.name            // true
-// mountainsRef.fullPath === mountainImagesRef.fullPath    // false
-var file = photo.changingThisBreaksApplicationSecurity ; 
-console.log(file)
 
-file = "http://www.collegedegreesearch.net/wp-content/uploads/2014/02/search.png" ; 
-//  var reader = new FileReader();
-// reader.onload =this._handleReaderLoaded.bind(this);
+ var getFileBlob = function(url, cb) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.responseType = "blob";
+        xhr.addEventListener('load', function() {
+            cb(xhr.response);
+        });
+        xhr.send();
+    };
 
-        //reader.readAsBinaryString(file);
+    var blobToFile = function(blob, name) {
+        blob.lastModifiedDate = new Date();
+        blob.name = name;
+        return blob;
+    };
 
-      var metadata = {
-  contentType: 'image/png',
-};
-console.log(typeof(file));
- // use the Blob or File API .changingThisBreaksApplicationSecurity
-mountainsRef.put(file , metadata).then(function(snapshot) {
-  console.log('Done');
-});
+    var getFileObject = function(filePathOrUrl, cb) {
+        getFileBlob(filePathOrUrl, function(blob) {
+            cb(blobToFile(blob, 'test.jpg'));
+        });
+    };
+
+    getFileObject(photo, function(fileObject) {
+        var uploadTask = storageRef.child('images/test.jpg').put(fileObject);
+
+        uploadTask.on('state_changed', function(snapshot) {
+            console.log(snapshot);
+        }, function(error) {
+            console.log(error);
+        }, function() {
+            var downloadURL = uploadTask.snapshot.downloadURL;
+            console.log(downloadURL);
+            // handle image here
+        });
+    });
+
+    
     firebase.auth().createUserWithEmailAndPassword(email, password).then (() => {
 
        user = firebase.auth().currentUser;
