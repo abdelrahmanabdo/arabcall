@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+<ion-title>
+creat
+</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<main class="page">
+		<div class="bg_color full_vh">
+			<div class="container">
+				<div class="login_form">
+					<form class="form" method="post" (ngSubmit) = "creat()" [formGroup] = "userForm" >
+						<div class="form_input">
+							<a  class="profile_img" [hidden]="picon"><i class="ion-ios-person-outline" (click)="select_photo()"></i></a>
+							<img [src]="profileimg" [hidden]="pimg" class="profile_img" (click)="select_photo()"/>
+						</div>
+						<div class="form_input">
+							<input type="text" name="name" placeholder="Full Name" formControlName = "username" >
+						</div>
+						<div class="form_input">
+							<input type="text" name="mail" placeholder="Email Address" formControlName = "email">
+						</div>
+						<div class="form_input">
+							<input type="password" name="password" placeholder="Password" formControlName = "password">
+						</div>
+						<div class="form_input">
+							<input type="password" name="confirm" placeholder="Confirm Password" formControlName = "confirm">
+						</div>
+						<div class="form_input">
+							<input type="submit" value="Create Account" [disabled] = "!userForm.valid || !checkpassword(this.userForm.value.confirm)">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+</ion-content>
