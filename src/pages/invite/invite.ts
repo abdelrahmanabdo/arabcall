@@ -2,24 +2,23 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the GroupPage page.
+ * Generated class for the InvitePage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-group',
-  templateUrl: 'group.html',
-  styleUrls : ['./assets/main.css']
+  selector: 'page-invite',
+  templateUrl: 'invite.html',
 })
-export class GroupPage {
-hidesearch = false ; 
+export class InvitePage {
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GroupPage');
+    console.log('ionViewDidLoad InvitePage');
   }
 
 }

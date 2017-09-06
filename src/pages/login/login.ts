@@ -27,7 +27,7 @@ password ;
 
   userForm = new FormGroup ({
      
-      email : new FormControl (null , [Validators.required , Validators.email]) , 
+      username : new FormControl (null , [Validators.required , Validators.email]) , 
       
       password : new FormControl (null , [Validators.required]) , 
      
@@ -38,9 +38,9 @@ password ;
     console.log('ionViewDidLoad LoginPage');
   }
   login () {
-      console.log(this.userForm.value)
+     // console.log(this.userForm.value)
     
-    firebase.login(this.userForm.value.email,this.userForm.value.password) ; 
+    firebase.login(this.userForm.value) ; 
   }
 creat () {
   this.navCtrl.push(CreataccountPage) ; 

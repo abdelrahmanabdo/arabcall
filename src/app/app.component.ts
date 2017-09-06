@@ -1,3 +1,4 @@
+import { ChatPage } from './../pages/chat/chat';
 import { DatabaseProvider } from './../providers/database/database';
 import { TabsPage } from './../pages/tabs/tabs';
 import { LoginPage } from './../pages/login/login';
@@ -22,7 +23,11 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.hide();
-      splashScreen.hide();
+      setTimeout(function() {
+        console.log("done")
+        splashScreen.hide();
+      }, 7000);
+      
       
     });
     firebase = this.database ; 
@@ -62,10 +67,10 @@ ngOnInit () {
 
     if(snapshot == "logged") {
 
-//this.nav.setRoot (TabsPage);
+this.nav.setRoot (TabsPage);
     }else {
 
-      this.nav.setRoot(LoginPage);
+      this.nav.setRoot(TabsPage);
     }
   })
 }

@@ -1,3 +1,4 @@
+import { MorePage } from './../pages/more/more';
 import { PhotoselectionPage } from './../pages/photoselection/photoselection';
 import { ChatPage } from './../pages/chat/chat';
 import { ContactsPage } from './../pages/contacts/contacts';
@@ -33,7 +34,7 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HomePage,LoginPage,TabsPage,CreataccountPage,GroupPage,ContactsPage,ChatPage,PhotoselectionPage
-  ,CDVPhotoLibraryPipe
+  ,CDVPhotoLibraryPipe,MorePage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,7 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,LoginPage,TabsPage,CreataccountPage,GroupPage,ContactsPage,ChatPage,PhotoselectionPage
+    HomePage,LoginPage,TabsPage,CreataccountPage,GroupPage,ContactsPage,ChatPage,PhotoselectionPage,MorePage
   ],
   providers: [
     StatusBar,

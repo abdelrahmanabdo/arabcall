@@ -1,9 +1,10 @@
+import { MorePage } from './../more/more';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { GroupPage } from '../group/group';
 import { ChatPage } from '../chat/chat';
 import { ContactsPage } from '../contacts/contacts';
-
+import { Events } from 'ionic-angular';
 /**
  * Generated class for the TabsPage tabs.
  *
@@ -22,6 +23,14 @@ export class TabsPage {
   contactsRoot = ContactsPage
 
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController,public events: Events) {}
+onclick () {
 
+  this.events.publish('clicked', "user");
+}
+
+more () {
+
+  this.navCtrl.push(MorePage) ; 
+}
 }

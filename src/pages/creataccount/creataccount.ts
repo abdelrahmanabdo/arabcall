@@ -40,8 +40,11 @@ pimg = true ; profileimg ; picon = false ;
 }
 
   userForm = new FormGroup ({
-      username : new FormControl (null , Validators.required) , 
-      email : new FormControl (null , [Validators.required , Validators.email]) , 
+      
+      firstname : new FormControl (null , Validators.required),
+      lastname : new FormControl (null , Validators.required),
+       username : new FormControl (null , Validators.required) ,
+      email_address : new FormControl (null , [Validators.required , Validators.email]) , 
      
       password : new FormControl (null , [Validators.required]) , 
       confirm : new FormControl (null , [Validators.required ]) 
@@ -73,10 +76,10 @@ console.log("entered")
 if(this.profileimg) {
   console.log("there is a photo")
   console.log(this.profileimg.changingThisBreaksApplicationSecurity)
-  firebase.creat2(this.userForm.value.email,this.userForm.value.password,this.userForm.value.username,this.profileimg) ; 
+  firebase.creat2(this.userForm.value.email,this.userForm.value.password,this.userForm.value.username,this.profileimg,this.userForm.value.firstname,this.userForm.value.lastname) ; 
  
 }else {
-  firebase.creat1(this.userForm.value.email,this.userForm.value.password,this.userForm.value.username) ; 
+  firebase.creat1(this.userForm.value.email,this.userForm.value.password,this.userForm.value.username,this.userForm.value) ; 
  
 }
    }

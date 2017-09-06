@@ -1,3 +1,4 @@
+import { DatabaseProvider } from './../../providers/database/database';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -11,14 +12,21 @@ import { NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-contacts',
   templateUrl: 'contacts.html',
+    styleUrls : ['./assets/main.css']
 })
 export class ContactsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+friends ;
+hidesearch = true ;  
+  constructor(public navCtrl: NavController, public navParams: NavParams,public database:DatabaseProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactsPage');
+       this.database.getfriends.subscribe (data => {
+this.friends = data ; 
+
+      console.log(data) ; 
+    })
   }
 
 }

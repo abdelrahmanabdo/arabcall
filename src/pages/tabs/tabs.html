@@ -1,5 +1,7 @@
-<ion-tabs>
-    <ion-tab [root]="groupRoot" tabTitle="Group" tabIcon="information-circle"></ion-tab>
-    <ion-tab [root]="chatRoot" tabTitle="Chat" tabIcon="information-circle"></ion-tab>
-    <ion-tab [root]="contactsRoot" tabTitle="Contacts" tabIcon="information-circle"></ion-tab>
-</ion-tabs>
+<ion-tabs tabsPlacement="top" >
+        <ion-tab [root]="groupRoot"  tabIcon="ios-people"></ion-tab>
+        <ion-tab [root]="chatRoot"  tabIcon="ios-chatboxes"></ion-tab>
+        <ion-tab [root]="contactsRoot" tabIcon="ios-list-box"></ion-tab>
+        <ion-tab (ionSelect)="onclick()" tabIcon="md-search"></ion-tab>
+        <ion-tab (ionSelect)="more()" tabIcon="md-more"></ion-tab>
+  </ion-tabs>

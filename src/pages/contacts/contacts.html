@@ -6,13 +6,49 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Contacts</ion-title>
-  </ion-navbar>
+
+
+<ion-searchbar type="text" style="disabled : true ; "></ion-searchbar>
+
+ 
+
+ 
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
+  
+  
+
+	<main class="page">
+		<div class="bg_color">
+			<!--<header class="nav text_center">
+				<nav class="navigation">
+					<ul>
+						<li><a href="groups.html" class="active"><i class="ion-ios-people"></i></a></li>
+						<li><a href="chats.html"><i class="ion-chatboxes"></i></a></li>
+						<li><a href="contacts.html"><i class="ion-android-list"></i></a></li>
+					</ul>
+				</nav>
+				<div class="search"><a href="#"><i class="ion-ios-search-strong"></i></a></div>
+				<div class="menu"><a href="#"><i class="ion-android-more-vertical"></i></a></div>
+			</header>-->
+			<div class="contacts">
+				<div class="container">
+					<div class="contact_item online" *ngFor="let p of friends">
+						<div class="contact_img">
+							<img [src]="p.avatar" alt="Arab Call" title="Arab Call">
+						</div>
+						<div class="contact_info">
+							<h3>{{p.name}}</h3>
+						</div>
+					</div> <!-- //Contact Item -->
+	
+
+				</div>
+			</div>
+		</div>
+</main>
 </ion-content>

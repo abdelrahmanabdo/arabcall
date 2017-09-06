@@ -85,9 +85,10 @@ body {
 
 main.page {
 	width: 100%;
-	max-width: 768px;
+	/*max-width: 768px;*/
 	margin: 0 auto;
 	min-height: 100vh;  
+	height: 100%;
 }
 .container {
 	width: 94%;
@@ -105,6 +106,7 @@ main.page {
 }
 .bg_color {
 	background-color: #5c0632;
+	height: 100%;
 }
 .flex {
 	display: flex;
@@ -590,3 +592,20 @@ Start Menu Settings
 .options li a span {
 	margin-left: 45px;
 }
+.navbar {
+
+	background-color: #5c0632 ; 
+}
+
+
+/*================Overwriting==================*/
+header.navigation {
+	position: relative;
+	overflow: hidden;
+}
+header.navigation .tabs-md .tabbar {
+	background-color: #5c0632 !important;
+}
+.tabs-md[tabsLayout=icon-hide] .tab-button, .tabs-md[tabsLayout=title-hide] .tab-button, .tabs-md .tab-button.icon-only, .tabs-md .tab-button.has-title-only {
+        background-color: #080 important;
+    }
