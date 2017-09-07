@@ -1,6 +1,6 @@
 import { DatabaseProvider } from './../../providers/database/database';
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams,LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the ContactsPage page.
@@ -17,12 +17,17 @@ import { NavController, NavParams } from 'ionic-angular';
 export class ContactsPage {
 friends ;
 hidesearch = true ;  
-  constructor(public navCtrl: NavController, public navParams: NavParams,public database:DatabaseProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public database:DatabaseProvider,public loadingctrl:LoadingController) {
   }
 
   ionViewDidLoad() {
+      let loading = this.loadingctrl.create({
+    showBackdrop : false 
+  });
+loading.present() ; 
     console.log('ionViewDidLoad ContactsPage');
        this.database.getfriends.subscribe (data => {
+         loading.dismiss();
 this.friends = data ; 
 
       console.log(data) ; 

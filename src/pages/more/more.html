@@ -13,6 +13,29 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+<main class="page">
+		<!-- Start Menu Settings -->
+		<div class="settings">
+		
+			<div class="settings_items">
+				<ul>
+					<li>
+						<a (click)="openaccount()">
+							<i class="ion-ios-person"></i>
+							<span>ACCOUNT</span>
+						</a>
+					</li>
+			
+					<li>
+						<a (click)="signout()">
+							<i class="ion-information-circled"></i>
+							<span>Signout</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //End Menu Settings -->
+	</main>
 </ion-content>

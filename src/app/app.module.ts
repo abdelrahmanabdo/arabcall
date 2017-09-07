@@ -1,3 +1,6 @@
+import { ProfilePage } from './../pages/profile/profile';
+import { CreatgroupPage } from './../pages/creatgroup/creatgroup';
+import { CreatbcPage } from './../pages/creatbc/creatbc';
 import { MorePage } from './../pages/more/more';
 import { PhotoselectionPage } from './../pages/photoselection/photoselection';
 import { ChatPage } from './../pages/chat/chat';
@@ -34,17 +37,20 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HomePage,LoginPage,TabsPage,CreataccountPage,GroupPage,ContactsPage,ChatPage,PhotoselectionPage
-  ,CDVPhotoLibraryPipe,MorePage
+  ,CDVPhotoLibraryPipe,MorePage,CreatbcPage,CreatgroupPage,ProfilePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp , {
+      tabsHideOnSubPages:true
+    }),
     AngularFireModule.initializeApp(firebaseConfig),HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,LoginPage,TabsPage,CreataccountPage,GroupPage,ContactsPage,ChatPage,PhotoselectionPage,MorePage
+  ,CreatbcPage,CreatgroupPage,ProfilePage
   ],
   providers: [
     StatusBar,

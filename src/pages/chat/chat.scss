@@ -1,3 +1,32 @@
 page-chat {
+.searchbar-md .searchbar-input {
+    background-color: #5c0632 !important; 
+    color: white !important;
+}
+ion-header {
+    background-color: #5c0632 !important ; 
+}
+ion-fab[bottom][edge] {
 
+    bottom: 16px !important;
+    right: 22px !important;
+}
+button[ion-fab] {
+        overflow: visible;
+        position: relative;
+
+        ion-label {
+            position: absolute;
+            top: -8px;
+            right: 55px;
+
+            color: gray;
+            background-color: white;
+            line-height: 24px;
+            padding: 4px 8px;
+            border-radius: 4px;
+			 box-shadow: 1px 1px 0px #959595;
+			 font-weight: bold;
+        }
+    }
 }

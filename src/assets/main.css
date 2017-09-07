@@ -35,7 +35,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	width:100%;
 }
 ol, ul {
 	list-style: none;
@@ -78,7 +77,7 @@ body {
     font-size: 14px;
     line-height: 1.7;
     color: #535353;
-    background-color: #FFF;
+    background-color: #5c0632;
     margin: 0;
     padding:0;
 }
@@ -88,7 +87,6 @@ main.page {
 	/*max-width: 768px;*/
 	margin: 0 auto;
 	min-height: 100vh;  
-	height: 100%;
 }
 .container {
 	width: 94%;
@@ -106,7 +104,6 @@ main.page {
 }
 .bg_color {
 	background-color: #5c0632;
-	height: 100%;
 }
 .flex {
 	display: flex;
@@ -399,6 +396,12 @@ nav.navigation ul li i {
     color: #FFF;
     background-color: #080;
 }
+.contact_item .contact_info time {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 10px;
+}
 /*=========================
 //End Contacts Page
 ===========================*/
@@ -496,10 +499,13 @@ Start Menu Settings
 .account .text_side h3 {
 	margin-top: 70px;
   	color: #5c0632;
+  	font-size: 12px;
+    margin-left: 5px;
 }
 .account_form {
 	width: 100%;
 	overflow: hidden;
+    margin-top: 25px;
 }
 .field {
  	margin-bottom: 15px;
@@ -592,20 +598,224 @@ Start Menu Settings
 .options li a span {
 	margin-left: 45px;
 }
-.navbar {
 
-	background-color: #5c0632 ; 
+
+/*====================================
+ Start Chat Room
+====================================*/
+.chat_room {
+    background-color: #FFF;
 }
-
-
-/*================Overwriting==================*/
-header.navigation {
-	position: relative;
+.chat_room header {
+	overflow: hidden;
+	padding: 10px 0;
+	background-color: #5c0632;
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    max-width: 768px;
+    margin: 0 auto;
+}
+.chat_room header .back_btn {
+	float: left;
+	display: inline-block;
+	width: 20%;
+}
+.chat_room header .back_btn a {
+	color: #5c0632;
+	font-size: 16px;
+	background-color: #FFF;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 50%;
+	display: block;
+}
+.chat_room header {
+	
+}
+.chat_room header h3.name {
+	float: left;
+	text-align: center;
+	color: #FFF;
+	font-size: 18px;
+	margin: 0 auto;
+	width: 40%;
+}
+.chat_room header ul {
+	width: 40%;
+	float: right;
+	text-align: right;
 	overflow: hidden;
 }
-header.navigation .tabs-md .tabbar {
-	background-color: #5c0632 !important;
+.chat_room header ul li {
+	display: inline-block;
+	text-align: center;
+	margin: 0 5px;
 }
-.tabs-md[tabsLayout=icon-hide] .tab-button, .tabs-md[tabsLayout=title-hide] .tab-button, .tabs-md .tab-button.icon-only, .tabs-md .tab-button.has-title-only {
-        background-color: #080 important;
-    }
+.chat_room header ul li a {
+	display: block;
+	color: #FFF;
+	font-size: 18px;
+}
+.chat_room header ul li a:last-child {
+	font-size: 21px;
+}
+.chat_room header ul li a.with_bg_brdr {
+	color: #5c0632;
+	font-size: 16px;
+	background-color: #FFF;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 50%;
+}
+.chat_room_body {
+	position: relative;
+	overflow: hidden;
+	margin-top: 55px;
+}
+.chat_room_body .msgs {
+	background-color: #EEE;
+	padding: 20px 5% 20px;
+	margin-bottom: 15px;
+	overflow: hidden;;
+}
+.chat_room_body .msgs .sender_msg {
+	width: 90%;
+	float: left;
+	text-align: left;
+	margin-bottom: 10px;
+}
+.chat_room_body .msgs .sender_msg .sender {
+	position: relative;
+}
+.chat_room_body .msgs .sender_msg .sender:before {
+    position: absolute;
+    content: '';
+    display: block;
+    bottom: 0;
+    left: -20px;
+    text-align: center;
+    border-width: 20px 20px 20px 20px;
+    border-style: solid;
+    border-color: transparent transparent #FFF;
+    width: 0px;
+    height: 0px;
+}
+.chat_room_body .msgs .reciever_msg {
+	width: 90%;
+	float: right;
+	text-align: right;
+	position: relative;
+	margin-bottom: 10px;
+}
+.chat_room_body .msgs .reciever_msg .reciever {
+	position: relative;
+}
+.chat_room_body .msgs .reciever_msg .reciever:after {
+	position: absolute;
+    content: '';
+    display: block;
+    bottom: 0;
+    right: -20px;
+    text-align: center;
+    border-width: 20px 20px 20px 20px;
+    border-style: solid;
+    border-color: transparent transparent #FFF;
+    width: 0px;
+    height: 0px;
+}
+.chat_room_body .msgs .reciever_msg time,
+.chat_room_body .msgs .sender_msg time {
+	font-size: 12px;
+}
+
+.chat_room_body .msgs .msg_box {
+	padding: 7px;
+	background-color: #FFF;
+	border-radius: 10px;
+	height: auto;
+}
+.chat_room_body .msgs .msg_box h4 {
+	font-weight: 700;
+	color: #444;
+}
+.chat_room_body .msgs .msg_box p {
+	font-size: 13px;
+	color: #777;
+}
+.chat_room_body .typing {
+	height: 80px;
+	width: 100%;
+	background-color: #FFF;
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    max-width: 768px;
+    margin: 0 auto;
+}
+.chat_room_body .typing .typing_box {
+	background-color: #EEE;
+	height: 60px;
+	padding: 10px 3%;
+	overflow: hidden;
+    margin: 20px 3% 0;
+}
+.chat_room_body .typing form {
+	overflow: hidden;
+	width: 100%;
+}
+.chat_room_body .typing form .input {
+	width: calc(100% - 50px);
+	float: left;
+	position: relative;
+}
+.chat_room_body .typing form .input input {
+	width: 100%;
+	display: block;
+	height: 40px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 7px;
+	border-radius: 4px;
+	border: none;
+	background-color: #FFF;
+	box-shadow: 0 0 5px #AAA;
+}
+.chat_room_body .typing form .input i {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    color: #d2d2d2;
+    font-size: 24px;
+}
+.chat_room_body .typing form .button {
+	width: 50px;
+	float: left;
+	text-align: center;
+}
+.chat_room_body .typing form .button button {
+	text-align: center;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+.chat_room_body .typing form .button button i {
+	color: #5c0632;
+    font-size: 28px;
+    padding-top: 4px;
+    display: block;
+}
+.chat_body {
+	
+}
+/*====================================
+ //End Chat Room
+====================================*/

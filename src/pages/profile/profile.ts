@@ -11,6 +11,7 @@ import { NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html',
+    styleUrls : ['./assets/main.css']
 })
 export class ProfilePage {
 

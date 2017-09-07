@@ -1,3 +1,5 @@
+import { DatabaseProvider } from './../../providers/database/database';
+import { ProfilePage } from './../profile/profile';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -11,14 +13,24 @@ import { NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-more',
   templateUrl: 'more.html',
+  styleUrls : ['./assets/main.css']
 })
 export class MorePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public database:DatabaseProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MorePage');
+  }
+
+  openaccount () {
+
+    this.navCtrl.push(ProfilePage) ; 
+  }
+  signout () {
+this.database.signout() ; 
+
   }
 
 }

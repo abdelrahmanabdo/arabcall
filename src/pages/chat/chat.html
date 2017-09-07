@@ -5,11 +5,13 @@
   Ionic pages and navigation.
 -->
 
-<ion-header *ngIf="hidesearch">
+<ion-header>
 
- 
+  <ion-icon name="search" (click)="search()"></ion-icon>
+<div *ngIf="hidesearch">
+<ion-searchbar type="text"></ion-searchbar>
+</div>
 
- <ion-searchbar></ion-searchbar>
   
  
 
@@ -19,6 +21,18 @@
 
 
 <ion-content>
+  <ion-fab right bottom>
+    <button ion-fab style="color:0c9fcb">
+	<ion-icon name="add">
+	</ion-icon>
+	
+	</button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="newbc()"><ion-icon name="ios-grid-outline"></ion-icon><ion-label>New Broadcast</ion-label></button>
+      <button ion-fab (click)="newgroup()"><ion-icon name="logo-vimeo"></ion-icon><ion-label>New Group</ion-label></button>
+      
+    </ion-fab-list>
+  </ion-fab>	
 
 	<!--====================Start Page Wrapper=======================-->
 	<main class="page">
